@@ -11,14 +11,12 @@
         }
         public function error(){
             if($this->conexion->errno=='1062')
-                return '<div class="datos"><p>El DNI introducido ya existe</p></div>';
+                return '<div class="datos"><p>El Email introducido ya existe</p></div>';
             if($this->conexion->errno=='1406')
                 return '<div class="datos"><p>Uno de los campos introducidos supera el límite de caracteres</p></div>';
             return $this->conexion->errno.'--'.$this->conexion->error;
         }
-        public function posicionArray($num){
-            return $this->resultado->data_seek($num);
-        }
+    
         public function fila_array(){
             return $this->resultado->fetch_array();
         }
