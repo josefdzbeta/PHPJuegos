@@ -8,6 +8,6 @@
     $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
     if($mysqli === false){
-        die('Error: no te has podido conectar'.$mysqli->connect_error);
+        die('Error al conectar con la base de datos'.$mysqli->connect_error);
     }
 ?>
