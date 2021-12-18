@@ -1,4 +1,7 @@
-
+#color{
+  background: rgb(58,94,180);
+  background: linear-gradient(90deg, rgba(58,94,180,1) 0%, rgba(29,205,253,1) 53%, rgba(162,69,252,1) 100%);
+}
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -13,6 +16,12 @@
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
+svg{
+  position: absolute;
+  bottom: 157px;
+  left: 70px;
+}
+
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
@@ -32,13 +41,6 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-}
-.b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
 .bi {
