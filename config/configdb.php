@@ -5,9 +5,9 @@
     define('DB_NAME','Juegos');
 
     //Nueva conexión mysqli 
-    $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    $db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
-    if($mysqli === false){
-        die('Error: no te has podido conectar'.$mysqli->connect_error);
+    if($db === false){
+        die('Error al conectar con la base de datos'.$db->connect_error);
     }
 ?>

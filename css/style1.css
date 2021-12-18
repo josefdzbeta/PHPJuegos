@@ -7790,7 +7790,11 @@ textarea.form-control-lg {
 
 .bg-secondary {
   --bs-bg-opacity: 1;
+<<<<<<< HEAD
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+=======
+  /* background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important; */
+>>>>>>> InicioSesion
 }
 
 .bg-success {

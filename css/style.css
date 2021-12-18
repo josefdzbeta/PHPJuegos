@@ -1,16 +1,10 @@
-html,
-body {
-  height: 100%;
+#color{
+  background: rgb(58,94,180);
+  background: linear-gradient(90deg, rgba(58,94,180,1) 0%, rgba(29,205,253,1) 53%, rgba(162,69,252,1) 100%);
 }
-
-body {
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+a{
+  text-decoration: none;
 }
-
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -25,6 +19,12 @@ body {
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
+svg{
+  position: absolute;
+  bottom: 157px;
+  left: 70px;
+}
+
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
@@ -44,6 +44,33 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.rounded-4 { border-radius: .5rem; }
+.rounded-5 { border-radius: .75rem; }
+.rounded-6 { border-radius: 1rem; }
+
+.modal-sheet .modal-dialog {
+  width: 380px;
+  transition: bottom .75s ease-in-out;
+}
+.modal-sheet .modal-footer {
+  padding-bottom: 2rem;
+}
+
+.modal-alert .modal-dialog {
+  width: 380px;
+}
+
+.border-right { border-right: 1px solid #eee; }
+
+.modal-tour .modal-dialog {
+  width: 380px;
 }
 
 @media (min-width: 768px) {
