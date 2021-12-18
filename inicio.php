@@ -1,29 +1,33 @@
 <?php
-  ini_set('display_errors', 1); //Para mostrar errores de php 
+  ini_set('display_errors', 1);
   error_reporting(~0);
-  require("config.php");
-  session_start();
-  
-  
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form 
-    
-    $myusername = mysqli_real_escape_string($db,$_POST['email']);
-    $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-    
-    $sql = "SELECT id FROM admin WHERE idUsuario = '$myusername' and passw = '$mypassword'";
-    $result = mysqli_query($db,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row['active'];
-    
-    if (mysqli_num_rows($result) == 1){
-      $_SESSION['myusername'];
-        header("location: welcome.php");
+   REQUIRE ("config/configdb.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = mysqli_real_escape_string($db,$_POST['email']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT id FROM Usuarios WHERE idUsuario = '$myusername' and passw = '$mypassword'";
+      $result = $db->query($sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
 
-    }else {
-        $error = "Tu correo o contraseña son erróneos";
-    }
-  }
 ?>
 <!DOCTYPE html>
 <html lang=es>
@@ -42,7 +46,7 @@
         <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
     
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
