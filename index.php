@@ -46,7 +46,7 @@
         <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
     
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
