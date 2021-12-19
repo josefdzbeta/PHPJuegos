@@ -2,9 +2,16 @@
   background: rgb(58,94,180);
   background: linear-gradient(90deg, rgba(58,94,180,1) 0%, rgba(29,205,253,1) 53%, rgba(162,69,252,1) 100%);
 }
+#color1{
+  background: #373B44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+}
 a{
   text-decoration: none;
 }
+
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -76,5 +83,16 @@ svg{
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+  }
+}
+@media (max-width: 667px) {
+  svg{
+    left: 65px;
+    bottom: 182px;
+  }
+}
+@media (max-width: 568px) {
+  svg{
+    display: none;
   }
 }

@@ -24,7 +24,7 @@
         header('Location: welcome.php');
       }  
     else{  
-        echo "<h5> Error en el inicio de sesión. Contraseña o correo inválidos.</h5>";  
+      echo "<h5> Error en el inicio de sesión. Contraseña o correo inválidos.</h5>";  
     }     
   }
 ?>
@@ -38,12 +38,12 @@
       <link rel=stylesheet href=css/style.css>
       <title>Inicio de Sesión</title>
   </head>
-  <body class="text-center">
+  <body class="text-center" id="color1">
     <main class="form-signin">
       <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-5 shadow">
-            <div class="modal-header p-5 pb-4 border-bottom-0">
+            <div class="modal-header pb-4 border-bottom-0">
               <form action="index.php" method="POST">
                 <img class="mb-4" src="inicio.png" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
