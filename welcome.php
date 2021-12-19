@@ -10,7 +10,7 @@
       <title>Bienvenido</title>
    </head>
    <body>
-      <h1>Bienvenido <?php echo $comprobarUsuario; ?></h1> 
+      <h1>Bienvenido <?php echo $usuario; ?></h1> 
       <h2><a href = "logout.php">Cerrar Sesión</a></h2>
    </body>
 </html>

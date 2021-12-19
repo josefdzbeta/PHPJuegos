@@ -40,28 +40,36 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
-      <form action="index.php" method="POST">
-        <img class="mb-4" src="inicio.png" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
-    
-        <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
-          <label for="floatingInput">Email</label>
+      <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <form action="index.php" method="POST">
+                <img class="mb-4" src="inicio.png" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
+            
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                  <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                  <label for="floatingPassword">Contraseña</label>
+                </div>
+            
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Recuérdame
+                  </label>
+                </div>
+                <input type="submit" class="w-100 btn btn-lg btn-primary" value="Iniciar Sesión" name="inicio">
+                <p class="mt-5 mb-3 ">¿Todavía no tienes una cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
+                <p class="mt-5 mb-3 text-muted">&copy DWES 2021</p>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-          <label for="floatingPassword">Contraseña</label>
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Recuérdame
-          </label>
-        </div>
-        <input type="submit" class="w-100 btn btn-lg btn-primary" value="Iniciar Sesión" name="inicio">
-        <p class="mt-5 mb-3 ">¿Todavía no tienes una cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
-        <p class="mt-5 mb-3 text-muted">&copy DWES 2021</p>
-      </form>
+      </div>
     </main>
   </body>
 </html>
