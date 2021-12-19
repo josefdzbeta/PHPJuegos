@@ -1,33 +1,32 @@
 <?php
   ini_set('display_errors', 1);
   error_reporting(~0);
-   REQUIRE ("config/configdb.php");
-   session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
+  REQUIRE ("config/configdb.php");
+
+
+  session_start();
+  if(isset($_POST['inicio'])){
       
-      $myusername = mysqli_real_escape_string($db,$_POST['email']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+    $username = $_POST['email'];
+    $password = $_POST['password'];
       
-      $sql = "SELECT id FROM Usuarios WHERE idUsuario = '$myusername' and passw = '$mypassword'";
-      $result = $db->query($sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+      $sql = "SELECT * FROM Usuarios WHERE correo = '$username' and passw = '$password'";  
+      $result = mysqli_query($db, $sql);  
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+      $count = mysqli_num_rows($result); 
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
+      //Si es correcto, el valor devuelto debe ser 1
 		
-      if($count == 1) {
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
-
+      if($count == 1){  
+        $_SESSION['inicioUsuario'] = $username;
+        header('Location: welcome.php');
+      }  
+    else{  
+        echo "<h5> Error en el inicio de sesión. Contraseña o correo inválidos.</h5>";  
+    }     
+  }
 ?>
 <!DOCTYPE html>
 <html lang=es>
@@ -41,7 +40,7 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
-      <form action="inicio.php" method="POST">
+      <form action="index.php" method="POST">
         <img class="mb-4" src="inicio.png" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
     
@@ -59,7 +58,7 @@
             <input type="checkbox" value="remember-me"> Recuérdame
           </label>
         </div>
-        <input type="submit" class="w-100 btn btn-lg btn-primary" value="Iniciar Sesión">
+        <input type="submit" class="w-100 btn btn-lg btn-primary" value="Iniciar Sesión" name="inicio">
         <p class="mt-5 mb-3 ">¿Todavía no tienes una cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
         <p class="mt-5 mb-3 text-muted">&copy DWES 2021</p>
       </form>

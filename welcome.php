@@ -1,15 +1,16 @@
 <?php
    include('session.php');
 ?>
-<html">
-   
+<!DOCTYPE html>
+<html lang=es>
    <head>
-      <title>Welcome </title>
+      <meta charset=UTF-8>
+      <meta http-equiv=X-UA-Compatible content=IE=edge>
+      <meta name=viewport content=width=device-width,initial-scale=1.0>
+      <title>Bienvenido</title>
    </head>
-   
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
+      <h1>Bienvenido <?php echo $comprobarUsuario; ?></h1> 
       <h2><a href = "logout.php">Cerrar Sesión</a></h2>
    </body>
-   
 </html>
