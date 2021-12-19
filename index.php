@@ -24,7 +24,7 @@
         header('Location: welcome.php');
       }  
     else{  
-      echo "<h5> Error en el inicio de sesión. Contraseña o correo inválidos.</h5>";  
+      echo "Error en el inicio de sesión. Contraseña o correo inválidos.";  
     }     
   }
 ?>
@@ -40,14 +40,13 @@
   </head>
   <body class="text-center" id="color1">
     <main class="form-signin">
-      <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+      <div class="modal modal-signin position-static d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
         <div class="modal-dialog" role="document">
           <div class="modal-content rounded-5 shadow">
-            <div class="modal-header pb-4 border-bottom-0">
+            <div class="modal-header pb-4 border-bottom-0 ">
               <form action="index.php" method="POST">
                 <img class="mb-4" src="inicio.png" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
-            
                 <div class="form-floating">
                   <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
                   <label for="floatingInput">Email</label>
@@ -56,7 +55,6 @@
                   <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                   <label for="floatingPassword">Contraseña</label>
                 </div>
-            
                 <div class="checkbox mb-3">
                   <label>
                     <input type="checkbox" value="remember-me"> Recuérdame
