@@ -14,29 +14,28 @@
             empty($password2)) {
             
             $rellenarCampo = true;
+
         }
         if ($password !== $password2) {
             $comprobarPass = true;  
         }
-        /*
+        
         $sql = "SELECT * FROM Usuarios WHERE correo = '$email'";  
         $result = mysqli_query($db, $sql);  
         //Si el usuario ya existe será igual a 1
+        $count = mysqli_num_rows($result);
+
         if($count === 1){
             $showError = true;
         }
 
-        $consulta = "INSERT INTO Usuarios(nombre, correo, passw) VALUES ('$username', '$email', '$passw')";  
-        $resultado = mysqli_query($db, $consulta);
-
-        if($resultado){
-            echo 'Registrado exisitosamente';
-        }*/
+        $consulta = "INSERT INTO Usuarios(nombre, correo, passw) VALUES ('$username', '$email', '$password')"; 
+        $result = mysqli_query($db, $sql);
+        if($result){
+            header('location: index.php');
+        }
+        
     }
-      
-      
-  
-
 ?>
 <!DOCTYPE html>
 <html lang=es>
@@ -58,11 +57,12 @@
                             <h2 class="fw-bold mb-0">Registro de Usuario</h2>
                         </div>
                         <div class="modal-body p-5 pt-0">
-                            <form>
+                            <form action="registro.php" method="POST">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="floatingInput" name="nombre">
-                                    <label for="floatingInput">Nombre</label>
+                                    <input type="text" class="form-control rounded-4" id="floatingPassword" name="nombre">
+                                    <label for="floatingPassword">Nombre</label>
                                 </div>
+                                
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com" name="email">
                                     <label for="floatingInput">Email</label>
