@@ -70,9 +70,10 @@
     scroll-behavior: smooth;
   }
 }
-
+html{
+  height: 100vh;
+}
 body {
-  margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
@@ -5459,7 +5460,6 @@ textarea.form-control-lg {
   z-index: 1055;
   display: none;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
@@ -7790,11 +7790,9 @@ textarea.form-control-lg {
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-<<<<<<< HEAD
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
-=======
   /* background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important; */
->>>>>>> InicioSesion
+
 }
 
 .bg-success {
