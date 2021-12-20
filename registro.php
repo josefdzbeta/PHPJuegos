@@ -30,8 +30,8 @@
         }
 
         $consulta = "INSERT INTO Usuarios(nombre, correo, passw) VALUES ('$username', '$email', '$password')"; 
-        $result = mysqli_query($db, $sql);
-        if($result){
+        $resultado = mysqli_query($db, $consulta);
+        if($resultado){
             header('location: index.php');
         }
         
