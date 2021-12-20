@@ -3,8 +3,11 @@
   session_start();
   if(isset($_POST['inicio'])){
       
-    $username = $_POST['email'];
-    $password = $_POST['password'];
+    //$username = $_POST['email'];
+    //$password = $_POST['password'];
+    //Para evitar inyección sql
+    $username = mysqli_real_escape_string($db,$_POST['email']);
+    $password = mysqli_real_escape_string($db,$_POST['password']);
       
     $sql = "SELECT * FROM Usuarios WHERE correo = '$username' and passw = '$password'";  
     $result = mysqli_query($db, $sql);  
