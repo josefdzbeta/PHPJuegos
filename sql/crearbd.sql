@@ -5,7 +5,6 @@ USE Juegos;
 CREATE TABLE Usuarios(
     idUsuario smallint NOT NULL AUTO_INCREMENT,
     nombre varchar(50) NOT NULL,
-    apellido varchar(50) NOT NULL,
     correo varchar(50) NOT NULL UNIQUE,
     passw varchar(50) NOT NULL,
 

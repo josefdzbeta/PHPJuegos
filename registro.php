@@ -1,6 +1,45 @@
+<?php
+    REQUIRE ("config/configdb.php");
+    //session_start();
+    
+    if(isset($_POST['submit'])){
+        $username = $_POST['nombre'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password_confirm'];
+
+        if (empty($username) ||
+            empty($email) ||
+            empty($password) ||
+            empty($password2)) {
+            
+            $rellenarCampo = true;
+        }
+        if ($password !== $password2) {
+            $comprobarPass = true;  
+        }
+        /*
+        $sql = "SELECT * FROM Usuarios WHERE correo = '$email'";  
+        $result = mysqli_query($db, $sql);  
+        //Si el usuario ya existe será igual a 1
+        if($count === 1){
+            $showError = true;
+        }
+
+        $consulta = "INSERT INTO Usuarios(nombre, correo, passw) VALUES ('$username', '$email', '$passw')";  
+        $resultado = mysqli_query($db, $consulta);
+
+        if($resultado){
+            echo 'Registrado exisitosamente';
+        }*/
+    }
+      
+      
+  
+
+?>
 <!DOCTYPE html>
 <html lang=es>
-
     <head>
         <meta charset=UTF-8>
         <meta http-equiv=X-UA-Compatible content=IE=edge>
@@ -9,7 +48,6 @@
         <link rel=stylesheet href=css/style.css>
         <title>Registro</title>
     </head>
-
     <body id="color">
         <main>
             <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -22,15 +60,36 @@
                         <div class="modal-body p-5 pt-0">
                             <form>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+                                    <input type="text" class="form-control rounded-4" id="floatingInput" name="nombre">
+                                    <label for="floatingInput">Nombre</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com" name="email">
                                     <label for="floatingInput">Email</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                                    <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" name="password">
                                     <label for="floatingPassword">Contraseña</label>
                                 </div>
-                                <input class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit" value="Crear Cuenta">
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" name="password_confirm">
+                                    <label for="floatingPassword">Repita Contraseña</label>
+                                </div>
+                                <input class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit" value="Crear Cuenta" name="submit">
                                 <small class="text-muted">Al crear una cuenta, aceptas las condiciones y términos de uso.</small>
+                                <?php 
+                                    if(isset($rellenarCampo)){
+                                        echo '<div class="alert alert-danger" role="alert">Todos los campos deben ser rellenados.</div>';
+                                    }
+                                    if(isset($comprobarPass)){
+                                        echo '<div class="alert alert-danger" role="alert">Ambas contraseñas deben coincidir.</div>';
+                                    }
+                                    if(isset($showError)){
+                                        echo '<div class="alert alert-danger" role="alert">El usuario ya está registrado.</div>';
+
+                                    }
+                                ?>
+
                                 <hr class="my-4">
                                 
                                 <h2 class="fs-5 fw-bold mb-3">Preferencias</h2>
@@ -54,5 +113,4 @@
             </div>
         </main>
     </body>
-
 </html>
