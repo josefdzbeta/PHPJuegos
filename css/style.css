@@ -31,8 +31,6 @@ svg{
   bottom: 157px;
   left: 70px;
 }
-
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -44,7 +42,6 @@ svg{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;

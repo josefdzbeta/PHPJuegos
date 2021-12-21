@@ -59,8 +59,8 @@
                         <div class="modal-body p-5 pt-0">
                             <form action="registro.php" method="POST">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control rounded-4" id="floatingPassword" name="nombre">
-                                    <label for="floatingPassword">Nombre</label>
+                                    <input type="text" class="form-control rounded-4" id="floatingInput" name="nombre" placeholder="Nombre">
+                                    <label for="floatingInput">Nombre</label>
                                 </div>
                                 
                                 <div class="form-floating mb-3">
